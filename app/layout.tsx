@@ -1,6 +1,18 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { ThemeProvider } from "../components/theme-provider"
+//import { ThemeProvider } from "../components/theme-provider"
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { Roboto } from 'next/font/google';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../app/theme';
+import CustomThemeProvider from '../components/ThemeContext'
+
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto',
+});
 
 export const metadata: Metadata = {
   title: 'Padel Score',
@@ -19,9 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {children}
-          </ThemeProvider>
+        <AppRouterCacheProvider> 
+            <CustomThemeProvider >
+              {children}
++           </CustomThemeProvider>
+        </AppRouterCacheProvider>
+          
       </body>
     </html>
   )

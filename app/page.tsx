@@ -1,7 +1,7 @@
 "use client"
 
-import Dashboard from "../app/dashboard/page"
+import ScorePage from "../app/score/page"
 
 export default function SyntheticV0PageForDeployment() {
-  return <Dashboard />
+  return <ScorePage />
 }
