@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Container, Tabs, Tab, Box, Typography,IconButton } from '@mui/material'
+import { Container, Tabs, Tab, Box, Typography,IconButton ,Tooltip} from '@mui/material'
 import PlayersTab from '../../components/PlayersTab'
 import MatchesTab from '../../components/MatchesTab'
 import StatisticsTab from '../../components/StatisticsTab'
@@ -35,6 +35,8 @@ export default function ScorePage() {
         </Box>
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 3 }}>
+      
+
         <Tabs value={activeTab} onChange={handleTabChange} aria-label="score tabs">
           <Tab label="Players" />
           <Tab label="Matches" />
